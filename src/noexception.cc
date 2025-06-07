@@ -24,13 +24,14 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#ifdef _LIBCXXRT_NOEXCEPT
 namespace std
 {
 	/**
 	 * Returns whether there are any exceptions currently being thrown that
 	 * have not been caught. Without exception support this is always false.
 	 */
-	bool uncaught_exception() _LIBCXXRT_NOEXCEPT
+	bool uncaught_exception()
 	{
 		return false;
 	}
@@ -38,8 +39,9 @@ namespace std
 	 * Returns the number of exceptions currently being thrown that have not
 	 * been caught. Without exception support this is always 0.
 	 */
-	int uncaught_exceptions() _LIBCXXRT_NOEXCEPT
+	int uncaught_exceptions()
 	{
 		return 0;
 	}
 }
+#endif
